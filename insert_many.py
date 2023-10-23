@@ -8,9 +8,12 @@ MONGODB_URI = os.getenv("MONGODB_URI")
 
 client = MongoClient(MONGODB_URI)
 
+
+# ====================================================
 # Dapatkan referensi ke basis data 'pendataan_penduduk'
 db = client.pendataan_penduduk
 
+# ====================================================
 # Dapatkan referensi ke koleksi 'Provinsi'
 provinsi_collection = db["Provinsi"]
 
@@ -30,6 +33,7 @@ print("# of documents inserted: ", len(document_ids))
 print(f"_ids of inserted documents: {document_ids}")
 
 
+# ==================================================
 # Dapatkan referensi ke koleksi 'KabupatenKota'
 kabupaten_kota_collection = db["KabupatenKota"]
 
@@ -43,6 +47,26 @@ kabupaten_kota_data = [
 
 # Tulis ekspresi yang memasukkan data Kabupaten/Kota ke koleksi 'KabupatenKota'
 result = kabupaten_kota_collection.insert_many(kabupaten_kota_data)
+
+document_ids = result.inserted_ids
+print("# of documents inserted: ", len(document_ids))
+print(f"_ids of inserted documents: {document_ids}")
+
+
+# ========================================
+# Dapatkan referensi ke koleksi 'Kecamatan'
+kecamatan_collection = db["Kecamatan"]
+
+kecamatan_data = [
+    {"id_kecamatan": 1001, "nama_kecamatan": "Cimahi", "id_kabupaten_kota": 101, "id_provinsi": 1},
+    {"id_kecamatan": 1002, "nama_kecamatan": "Sidoarjo", "id_kabupaten_kota": 102, "id_provinsi": 2},
+    {"id_kecamatan": 1003, "nama_kecamatan": "Salatiga", "id_kabupaten_kota": 103, "id_provinsi": 3},
+    {"id_kecamatan": 2001, "nama_kecamatan": "Padang Barat", "id_kabupaten_kota": 201, "id_provinsi": 4},
+    {"id_kecamatan": 2002, "nama_kecamatan": "Padang Selatan", "id_kabupaten_kota": 202, "id_provinsi": 5}
+]
+
+# Tulis ekspresi yang memasukkan data Kecamatan ke koleksi 'Kecamatan'
+result = kecamatan_collection.insert_many(kecamatan_data)
 
 document_ids = result.inserted_ids
 print("# of documents inserted: ", len(document_ids))
