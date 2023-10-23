@@ -29,4 +29,24 @@ document_ids = result.inserted_ids
 print("# of documents inserted: ", len(document_ids))
 print(f"_ids of inserted documents: {document_ids}")
 
+
+# Dapatkan referensi ke koleksi 'KabupatenKota'
+kabupaten_kota_collection = db["KabupatenKota"]
+
+kabupaten_kota_data = [
+    {"id_kabupaten_kota": 101, "nama_kabupaten_kota": "Bandung", "id_provinsi": 1},
+    {"id_kabupaten_kota": 102, "nama_kabupaten_kota": "Surabaya", "id_provinsi": 2},
+    {"id_kabupaten_kota": 103, "nama_kabupaten_kota": "Semarang", "id_provinsi": 3},
+    {"id_kabupaten_kota": 201, "nama_kabupaten_kota": "Padang", "id_provinsi": 4},
+    {"id_kabupaten_kota": 202, "nama_kabupaten_kota": "Palembang", "id_provinsi": 5}
+]
+
+# Tulis ekspresi yang memasukkan data Kabupaten/Kota ke koleksi 'KabupatenKota'
+result = kabupaten_kota_collection.insert_many(kabupaten_kota_data)
+
+document_ids = result.inserted_ids
+print("# of documents inserted: ", len(document_ids))
+print(f"_ids of inserted documents: {document_ids}")
+
+
 client.close()
