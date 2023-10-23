@@ -114,6 +114,41 @@ print(f"_ids of inserted documents: {document_ids}")
 
 
 # ==============================================
+# Dapatkan referensi ke koleksi 'RW'
+rw_collection = db["RW"]
+
+rw_data = [
+    {"no_rw": 1, "id_dukuh": 100001, "id_desa": 10001, "id_kecamatan": 1001, "id_kabupaten_kota": 101, "id_provinsi": 1},
+    {"no_rw": 2, "id_dukuh": 100002, "id_desa": 10002, "id_kecamatan": 1002, "id_kabupaten_kota": 102, "id_provinsi": 2},
+    {"no_rw": 3, "id_dukuh": 100003, "id_desa": 10003, "id_kecamatan": 1003, "id_kabupaten_kota": 103, "id_provinsi": 3},
+    {"no_rw": 101, "id_dukuh": 200001, "id_desa": 20001, "id_kecamatan": 2001, "id_kabupaten_kota": 201, "id_provinsi": 4},
+    {"no_rw": 102, "id_dukuh": 200002, "id_desa": 20002, "id_kecamatan": 2002, "id_kabupaten_kota": 202, "id_provinsi": 5}
+]
+
+# Tulis ekspresi yang memasukkan data RW ke koleksi 'RW'
+result = rw_collection.insert_many(rw_data)
+
+document_ids = result.inserted_ids
+print("# of documents inserted: ", len(document_ids))
+print(f"_ids of inserted documents: {document_ids}")
+
+
+# ==============================================
+
+
+# ==============================================
+
+
+# ==============================================
+
+
+# ==============================================
+
+
+# ==============================================
+
+
+# ==============================================
 
 
 # ==============================================
