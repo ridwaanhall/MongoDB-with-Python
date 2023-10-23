@@ -81,7 +81,8 @@ desa_data = [
     {"id_desa": 10001, "nama_desa": "Cisitu", "id_kecamatan": 1001, "id_kabupaten_kota": 101, "id_provinsi": 1},
     {"id_desa": 10002, "nama_desa": "Waru", "id_kecamatan": 1002, "id_kabupaten_kota": 102, "id_provinsi": 2},
     {"id_desa": 10003, "nama_desa": "Sidorejo", "id_kecamatan": 1003, "id_kabupaten_kota": 103, "id_provinsi": 3},
-    {"id_desa": 20001, "nama_desa": "Bungus", "id_kecamatan": 2001, "id_kabupaten_kota": 201, "id_provinsi": 4}
+    {"id_desa": 20001, "nama_desa": "Bungus", "id_kecamatan": 2001, "id_kabupaten_kota": 201, "id_provinsi": 4},
+    {"id_desa": 20002, "nama_desa": "Caringin", "id_kecamatan": 2002, "id_kabupaten_kota": 202, "id_provinsi": 5}
 ]
 
 # Tulis ekspresi yang memasukkan data Desa ke koleksi 'Desa'
