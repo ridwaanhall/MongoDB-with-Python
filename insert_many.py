@@ -73,4 +73,24 @@ print("# of documents inserted: ", len(document_ids))
 print(f"_ids of inserted documents: {document_ids}")
 
 
+# ================================================
+# Dapatkan referensi ke koleksi 'Desa'
+desa_collection = db["Desa"]
+
+desa_data = [
+    {"id_desa": 10001, "nama_desa": "Cisitu", "id_kecamatan": 1001, "id_kabupaten_kota": 101, "id_provinsi": 1},
+    {"id_desa": 10002, "nama_desa": "Waru", "id_kecamatan": 1002, "id_kabupaten_kota": 102, "id_provinsi": 2},
+    {"id_desa": 10003, "nama_desa": "Sidorejo", "id_kecamatan": 1003, "id_kabupaten_kota": 103, "id_provinsi": 3},
+    {"id_desa": 20001, "nama_desa": "Bungus", "id_kecamatan": 2001, "id_kabupaten_kota": 201, "id_provinsi": 4}
+]
+
+# Tulis ekspresi yang memasukkan data Desa ke koleksi 'Desa'
+result = desa_collection.insert_many(desa_data)
+
+document_ids = result.inserted_ids
+print("# of documents inserted: ", len(document_ids))
+print(f"_ids of inserted documents: {document_ids}")
+
+
+
 client.close()
