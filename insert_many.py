@@ -93,5 +93,33 @@ print("# of documents inserted: ", len(document_ids))
 print(f"_ids of inserted documents: {document_ids}")
 
 
+# ==============================================
+# Dapatkan referensi ke koleksi 'Dukuh'
+dukuh_collection = db["Dukuh"]
+
+dukuh_data = [
+    {"id_dukuh": 100001, "nama_dukuh": "Dukuh 1", "id_desa": 10001, "id_kecamatan": 1001, "id_kabupaten_kota": 101, "id_provinsi": 1},
+    {"id_dukuh": 100002, "nama_dukuh": "Dukuh 2", "id_desa": 10002, "id_kecamatan": 1002, "id_kabupaten_kota": 102, "id_provinsi": 2},
+    {"id_dukuh": 100003, "nama_dukuh": "Dukuh 3", "id_desa": 10003, "id_kecamatan": 1003, "id_kabupaten_kota": 103, "id_provinsi": 3},
+    {"id_dukuh": 200001, "nama_dukuh": "Bungus 1", "id_desa": 20001, "id_kecamatan": 2001, "id_kabupaten_kota": 201, "id_provinsi": 4},
+    {"id_dukuh": 200002, "nama_dukuh": "Bungus 2", "id_desa": 20002, "id_kecamatan": 2002, "id_kabupaten_kota": 202, "id_provinsi": 5}
+]
+
+# Tulis ekspresi yang memasukkan data Dukuh ke koleksi 'Dukuh'
+result = dukuh_collection.insert_many(dukuh_data)
+
+document_ids = result.inserted_ids
+print("# of documents inserted: ", len(document_ids))
+print(f"_ids of inserted documents: {document_ids}")
+
+
+# ==============================================
+
+
+# ==============================================
+
+
+# ==============================================
+
 
 client.close()
