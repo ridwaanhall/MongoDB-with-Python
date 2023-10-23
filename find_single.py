@@ -18,11 +18,11 @@ client = MongoClient(MONGODB_URI)
 db = client.pendataan_penduduk
 
 # get reference to the 'Provinsi' collection
-provinsi_collection = db.Provinsi
+provinsi_collection = db.Desa
 
 
 # query by ObjectId
-document_to_find = {"_id": ObjectId("65363ed53a0685c0ac931bad")}
+document_to_find = {"_id": ObjectId("653648583ee1ca591bc986d9")}
 
 # write an expression that retrieves the document matching the query constraint in the 'Provinsi' collection.
 result = provinsi_collection.find_one(document_to_find)
