@@ -240,13 +240,4 @@ print("# of documents inserted: ", len(document_ids))
 print(f"_ids of inserted documents: {document_ids}")
 
 
-# ==============================================
-
-
-# ==============================================
-
-
-# ==============================================
-
-
 client.close()
